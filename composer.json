@@ -1,0 +1,51 @@
+{
+    "name": "kstptm/feed-reader",
+    "description": "Feed reader",
+    "keywords": [
+        "feed",
+        "rss",
+        "atom"
+    ],
+    "version": "0.1.0",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Konstantin Potemichev",
+            "email": "kpotemichev@gmail.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Kstptm\\FeedReader\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.2 || ^8.0",
+        "ext-dom": "*",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "guzzlehttp/guzzle": "^7.2",
+        "http-interop/http-factory-guzzle": "^1.0",
+        "phpstan/phpstan": "^0.12",
+        "phpunit/phpunit": "^9.4"
+    },
+    "scripts": {
+        "test": "@php ./vendor/bin/phpunit",
+        "phpcsfixer": "@php ./vendor/bin/php-cs-fixer fix --diff",
+        "phpstan": "@php ./vendor/bin/phpstan analyse --ansi",
+        "check": [
+            "@composer phpcsfixer",
+            "@composer phpstan"
+        ]
+    },
+    "suggest": {
+        "http-interop/http-factory-guzzle": "HTTP factory implemented for Guzzle"
+    }
+}
